@@ -17,6 +17,7 @@ function App() {
         >
           Learn React with Jeff and MSU!
         </a>
+        Hello World!
       </header>
     </div>
   );

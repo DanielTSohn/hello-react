@@ -8,7 +8,7 @@ function Library()
   const [myBooks, setMyBooks] = useState([]);
   async function getBooks()
   {
-  let { data: Books, error } = await supabase
+  let { data: Books} = await supabase
   .from('Books')
   .select('*')
   setMyBooks(Books);

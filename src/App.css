@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+table
+{
+    margin: 3vmin;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: bisque;
+    color: brown;
+    font-size: x-large;
+    text-align: center;
+    border: 7px green solid;
+    border-collapse: collapse;
+}
+
+th
+{
+    padding: 2vmin;
+    color: darkblue;
+    font-size: xx-large;
+    border: 4px black solid;
+    font-size: 4vmin;
+}
+
+tbody th
+{
+    color: black;
+    font-size: xx-large;
+    text-align: right;
+    border: 4px darkgreen solid;
+    font-size: 3.5vmin;
+}
+
+td
+{
+    padding: 2vmin;
+    border: 2px lightgreen solid;
+    font-size: 3vmin;
+}

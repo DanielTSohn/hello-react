@@ -1,12 +1,47 @@
+import { useState } from 'react'
+import { supabase } from './supabaseClient';
 //import logo from './logo.svg';
 import './App.css';
 
+function Library()
+{
+  const [myBooks, setMyBooks] = useState([]);
+  async function getBooks()
+  {
+  let { data: Books, error } = await supabase
+  .from('Books')
+  .select('*')
+  setMyBooks(Books);
+  }
+  getBooks();
+
+  return(
+    <table>
+      {
+        myBooks.map(b => (
+          <tr>
+            <th scope = "row">{b.title}</th>
+            <td>{b.author}</td>
+            <td>{b.ISBN}</td>
+            <td>{b.description}</td>
+          </tr>
+        ))
+      }
+    </table>
+  )
+}
+
 function MagicButton()
 {
+  const [count, setCount] = useState(0);
+  function doMagic()
+  {
+    setCount(count + 1);
+  };
   return (
     <>
       <h3>This is a magic button</h3>
-      <button>Magic</button>
+      <button onClick={doMagic}>Magic {count} </button>
     </>
   );
 }
@@ -55,6 +90,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <Library />
       <MagicButton />
       <MagicArticle />
       <DuckDuckGoose />
